@@ -1,1 +1,19 @@
 ROTEIRO:
+O estilo The One nos permite sequenciar funções de uma forma que vai além da mera composição.
+
+Nele existe uma abstração que chamamos de "The One", que pode ser, por exemplo, uma classe. Ela conecta as funções do programa e os valores que devem ser manipulados.
+
+"The One" possui duas operações: A operação de "wrap" que recebe um valor e retorna uma instância da abstração e "bind" que recebe uma função do programa e a chama passando o valor presente na instância da abstração.
+
+Esse estilo é é derivado do Manad Identity da línguagem Haskell, línguagem essa que permite apenas funções puras, into é, funções que não possuem efeitos colaterais.
+
+É importante ressaltar que uma instância da abstração "The One" guarda sempre um valor por vez e a única maneira de manipular esse valor é através da operação de "bind".
+
+Crista Lopes, em seu livro "Exercises in Programming Styles" compara a abtração "The One" a uma cola. Ela diz que a abstração tem a responsabilidade de colar a parte comportamental do programa, as funções, com a parte dos dados.
+
+Além disso, com a abstração, é possível encadear facilmente várias funçõs. O valor de retorno de uma função é facilmente passado para a próxima função na cadeia. Por isso, The One faz a composição de funções de uma maneira muito única.
+
+Apesar da elegância teórica, esse estilo não possui características e propriedades que o tornam muito atraente para o uso em produção.
+
+O Monand de idêntidade é considerado trivial, por ser baseado nele, The One também não é um estilo rebuscado. Apesar disso, pode ser uma excelente forma de compor funções de forma simples e sintaticamente coerente.
+
