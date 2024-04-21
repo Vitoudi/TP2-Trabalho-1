@@ -1,0 +1,19 @@
+ROTEIRO APRIMIRADO:
+
+O estilo The One nos fornece uma forma de sequenciar funções que vai além da mera composição básica.
+
+Neste estilo, há uma abstração central chamada "The One", que pode ser implementada, por exemplo, como uma classe. Essa entidade conecta as diversas funções do programa aos valores que precisam ser manipulados.
+
+"The One" possui duas operações fundamentais: a operação de "wrap", que recebe um valor e retorna uma instância da abstração, e a operação de "bind", que aceita uma função do programa e a executa usando o valor armazenado na instância da abstração.
+
+Essa metodologia é derivada do Monad Identity da linguagem Haskell, na qual apenas funções puras são permitidas, ou seja, funções que não têm efeitos colaterais.
+
+É relevante destacar que uma instância da abstração "The One" sempre mantém um valor por vez, e a única maneira de interagir com esse valor é por meio da operação de "bind".
+
+Crista Lopes, autora de "Exercises in Programming Styles", compara a abstração "The One" a uma cola. Ela descreve que essa abstração tem o papel crucial de unir a parte comportamental do programa (ou seja, as funções) com a parte dos dados.
+
+Além disso, com essa abstração, é possível encadear facilmente diversas funções. O valor de retorno de uma função é transferido diretamente para a próxima função na cadeia. Por esse motivo, o estilo The One proporciona uma composição de funções de maneira única e eficiente.
+
+Embora seja teoricamente elegante, esse estilo pode não ser muito atraente para uso em produção devido à sua simplicidade. O Monad Identity é considerado trivial, e uma vez que o estilo The One se baseia nele, compartilha essa mesma característica. No entanto, pode ser uma excelente abordagem para compor funções de forma simples e sintaticamente coerente.
+
+Dessa forma, ao explorarmos o estilo The One, somos apresentados a uma perspectiva distinta sobre a composição de funções, destacando a importância da abstração e da manipulação de valores de forma direta e concisa.
