@@ -54,3 +54,5 @@ main = do
     let freqs = frequencies stopWordsRemoved
     let sorted = sort freqs
     putStrLn $ top25Freqs sorted
+    _ <- getLine
+    return ()
