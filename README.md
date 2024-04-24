@@ -34,9 +34,13 @@
 *  Use o comando cd para navegar até o diretório onde você clonou ou extraiu o repositório.
 
 * Se o código Haskell estiver contido em um arquivo .hs, compile-o usando o GHC. Por exemplo:
-  > ghc TheOne.hs
-
+```
+ghc TheOne.hs
+```
 Isso produzirá um arquivo executável (por padrão, com o mesmo nome do arquivo .hs, mas sem a extensão .hs).
+```
+./TheOne
+```
 * Executar o Programa.
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Vitoudi/TP2-Trabalho-1/issues)
