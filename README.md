@@ -14,6 +14,6 @@
 
 * O problema de maior complexidade é resolvido como um pipeline de funções unidas, com o desempacotamento acontecendo no final;
 
-* A operação de _bind_ simplesmente chama a função fornecida, fornecendo a ela o valor que ela contém e mantém o valor retornado.
+* A operação de _bind_ simplesmente chama a função fornecida, dando a ela o valor que ela contém e mantendo o valor retornado.
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Vitoudi/TP2-Trabalho-1/issues)
