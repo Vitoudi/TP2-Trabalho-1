@@ -26,4 +26,17 @@
 * Cabal: É um sistema de gerenciamento de pacotes e compilação para Haskell. Geralmente, é instalado junto com o GHC.
 * Um editor de texto ou ambiente de desenvolvimento Haskell, como o VSCode com o plugin Haskell, Emacs com o modo Haskell ou qualquer outro de sua preferência.
 
+### Passos para Execução
+
+* Clone este repositório para o seu sistema local usando o comando git clone <URL do repositório> ou baixe-o como um arquivo ZIP e extraia-o para uma pasta de sua escolha.
+* Navegue para o Diretório do Projeto.
+* Abra um terminal ou prompt de comando.
+*  Use o comando cd para navegar até o diretório onde você clonou ou extraiu o repositório.
+
+* Se o código Haskell estiver contido em um arquivo .hs, compile-o usando o GHC. Por exemplo:
+  > ghc TheOne.hs
+
+Isso produzirá um arquivo executável (por padrão, com o mesmo nome do arquivo .hs, mas sem a extensão .hs).
+* Executar o Programa.
+
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Vitoudi/TP2-Trabalho-1/issues)
