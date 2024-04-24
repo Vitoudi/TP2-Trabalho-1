@@ -2,6 +2,14 @@
 
 > Trabalho 1 - Grupo 8
 
+## Executando o Trabalho
+
+### Pré-requisitos
+
+* GHC (Glasgow Haskell Compiler): É um compilador de Haskell amplamente utilizado. Você pode instalá-lo seguindo as instruções fornecidas em: GHC Installation Guide
+* Cabal: É um sistema de gerenciamento de pacotes e compilação para Haskell. Geralmente, é instalado junto com o GHC.
+* Um editor de texto ou ambiente de desenvolvimento Haskell, como o VSCode com o plugin Haskell, Emacs com o modo Haskell ou qualquer outro de sua preferência.
+
 ## The One
 
 ### Restrições
