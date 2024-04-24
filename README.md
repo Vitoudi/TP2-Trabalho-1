@@ -12,7 +12,7 @@
 
 * Operações para vincular-se a funções, para estabelecer sequências de funções;
 
-* O problema de maior complexidade é resolvido como um pipeline de funções unidas, com o desempacotamento acontecendo no final;
+* O problema de maior complexidade é resolvido como um _pipeline_ de funções unidas, com o desempacotamento acontecendo no final;
 
 * A operação de _bind_ simplesmente chama a função fornecida, dando a ela o valor que ela contém e mantendo o valor retornado.
 
