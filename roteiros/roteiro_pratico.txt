@@ -1,0 +1,89 @@
+-- Importações de módulos necessários
+
+-- Define um novo tipo chamado TFTheOne com um parâmetro de tipo 'a'
+newtype TFTheOne a = TFTheOne { getValue :: a }  -- O tipo TFTheOne é uma "newtype" wrapper que contém um valor do tipo 'a'
+
+-- Define uma instância de Functor para o tipo TFTheOne
+instance Functor TFTheOne where
+    -- Define a função fmap para a instância Functor de TFTheOne
+    fmap :: (a -> b) -> TFTheOne a -> TFTheOne b
+    -- Aplica a função f ao valor dentro de TFTheOne e envolve o resultado em TFTheOne
+    fmap f (TFTheOne a) = TFTheOne (f a)
+
+-- Define uma função readFile' para ler o conteúdo de um arquivo dado seu caminho
+readFile' :: FilePath -> IO String
+-- Utiliza a sintaxe do bloco 'do' para definir ação de entrada/saída
+readFile' path = do
+    -- Utiliza a função readFile para ler o conteúdo do arquivo no caminho especificado
+    readFile path
+
+
+-- Define uma função filterChars que recebe uma String e retorna uma String filtrada,
+-- mantendo apenas caracteres alfabéticos e espaços, substituindo todos os outros por espaços.
+filterChars :: String -> String
+-- Usa a função map para aplicar uma função lambda a cada caractere da String de entrada.
+-- A função lambda verifica se o caractere é alfabético ou um espaço e mantém ou substitui conforme necessário.
+filterChars = map (\c -> if isAlpha c || c == ' ' then c else ' ')
+
+-- Define uma função normalize que recebe uma String e retorna uma versão normalizada,
+-- onde todos os caracteres são convertidos para minúsculas.
+normalize :: String -> String
+-- Usa a função map para aplicar a função toLower a cada caractere da String de entrada.
+normalize = map toLower
+
+-- Define uma função scan que recebe uma String e a divide em palavras,
+-- retornando uma lista de Strings, onde cada elemento é uma palavra.
+scan :: String -> [String]
+-- Usa a função words para dividir a String de entrada em palavras com base nos espaços.
+scan = words
+
+-- Define uma função removeStopWords que recebe uma lista de palavras e retorna uma ação IO
+-- que lê o conteúdo do arquivo "stop_words.txt", remove as palavras de parada da lista de palavras
+-- e retorna a lista filtrada.
+removeStopWords :: [String] -> IO [String]
+
+-- Utiliza a sintaxe do bloco 'do' para definir ação de entrada/saída
+
+
+-- Define uma função frequencies que recebe uma lista de palavras e retorna um mapa
+-- onde as chaves são as palavras únicas e os valores são as frequências das palavras.
+frequencies :: [String] -> M.Map String Int
+-- Usa a função foldr para percorrer a lista de palavras e construir um mapa com as frequências.
+-- A função lambda passada para foldr insere cada palavra no mapa ou atualiza sua frequência.
+frequencies = foldr (\word -> M.insertWith (+) word 1) M.empty
+
+-- Define uma função sort que recebe um mapa de frequências e retorna uma lista de pares
+-- (palavra, frequência) ordenada por frequência decrescente.
+sort :: M.Map String Int -> [(String, Int)]
+-- Usa a função sortBy para ordenar a lista de pares (palavra, frequência) com base nas frequências.
+-- A função passada para sortBy usa a função Down do módulo Data.Ord para inverter a ordem de classificação
+-- e ordenar por frequência decrescente.
+sort = sortBy (comparing (Data.Ord.Down . snd)) . M.toList
+
+-- Define a função principal main, que é uma ação IO sem argumentos de entrada.
+main :: IO ()
+-- Utiliza a sintaxe do bloco 'do' para definir uma sequência de ações de entrada/saída.
+main = do
+    -- Define um valor TFTheOne que contém o caminho para o arquivo "pride-and-prejudice.txt".
+    let theOne = TFTheOne "pride-and-prejudice.txt"
+    -- Lê o conteúdo do arquivo especificado pelo caminho contido em theOne e armazena-o em 'contents'.
+    contents <- readFile' (getValue theOne)
+    -- Normaliza o conteúdo do arquivo, removendo caracteres indesejados e convertendo para minúsculas.
+    let normalized = normalize . filterChars $ contents
+    -- Divide o conteúdo normalizado em uma lista de palavras.
+    let scanned = scan normalized
+    -- Remove as palavras de parada da lista de palavras e armazena o resultado em 'stopWordsRemoved'.
+    stopWordsRemoved <- removeStopWords scanned
+    -- Calcula as frequências das palavras na lista sem as palavras de parada.
+    let freqs = frequencies stopWordsRemoved
+    -- Ordena as frequências das palavras em ordem decrescente e armazena o resultado em 'sorted'.
+    let sorted = sort freqs
+    -- Imprime as 25 principais frequências das palavras no formato especificado pela função 'top25Freqs'.
+    putStrLn $ top25Freqs sorted
+    -- Aguarda uma entrada do usuário (geralmente pressionando Enter) e descarta o resultado.
+    _ <- getLine
+    -- Retorna uma ação vazia IO.
+    return ()
+
+
+
