@@ -24,7 +24,13 @@
 
 * GHC (Glasgow Haskell Compiler): É um compilador de Haskell amplamente utilizado. Você pode instalá-lo seguindo as instruções fornecidas [aqui.](https://www.haskell.org/downloads/)
 * Cabal: É um sistema de gerenciamento de pacotes e compilação para Haskell. Geralmente, é instalado junto com o GHC.
+* As bibliotecas _Containers_ e _Split_ são requisitos ao funcionamento. É possível adquirí-las com os seguintes comandos (Windows Powershell):
+```
+cabal install --lib containers
+cabal install --lib split
+```
 * Um editor de texto ou ambiente de desenvolvimento Haskell; como o VSCode com o plugin Haskell, Emacs com o modo Haskell ou qualquer outro de sua preferência.
+  
 
 ### Passos para Execução
 
