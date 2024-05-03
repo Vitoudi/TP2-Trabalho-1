@@ -9,6 +9,7 @@
 * Luana Pinho Torres - 222011623
 * Victor de Andrade Arruda - 222001378
 
+### Link do vídeo: https://github.com/Vitoudi/TP2-Trabalho-1/tree/main
 ### Link do respositório: https://github.com/Vitoudi/TP2-Trabalho-1/tree/main
 
 ## The One
