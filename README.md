@@ -2,6 +2,14 @@
 
 > Trabalho 1 - Grupo 8
 
+### Integrantes:
+* João Davi Ribeiro Tavares Leite - 222001322
+* Vanessa Paz Araújo Paiva - 180091905
+* Tiago Cabral de Faria - 16/0146712
+* Luana Pinho Torres - 222011623
+* Victor de Andrade Arruda - 222001378
+
+### Link do respositório: https://github.com/Vitoudi/TP2-Trabalho-1/tree/main
 
 ## The One
 
